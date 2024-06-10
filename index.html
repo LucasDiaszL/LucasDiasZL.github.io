@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <!-- Tela de Login -->
+  <div class="login-container">
+    <form id="login-form">
+      <h2>Login</h2>
+      <label for="login-nome">Nome</label>
+      <input id="login-nome" type="text" required />
+
+      <label for="login-matricula">Matrícula</label>
+      <input id="login-matricula" type="number" required />
+
+      <button type="submit">Entrar</button>
+      <p>Não tem uma conta? <a href="#" id="cadastro-link">Cadastre-se</a></p>
+    </form>
+  </div>
+
+  <!-- Tela de Cadastro -->
+  <div class="cadastro-container" style="display:none;">
+    <form id="cadastro-form">
+      <h2>Cadastro</h2>
+      <label for="cadastro-nome">Nome</label>
+      <input id="cadastro-nome" type="text" required />
+
+      <label for="cadastro-matricula">Matrícula</label>
+      <input id="cadastro-matricula" type="number" required />
+
+      <label for="cadastro-funcao">Função</label>
+      <input id="cadastro-funcao" type="text" required />
+
+      <label for="cadastro-empresa">Empresa</label>
+      <input id="cadastro-empresa" type="text" required />
+
+      <button type="submit">Cadastrar</button>
+      <p>Já tem uma conta? <a href="#" id="login-link">Login</a></p>
+    </form>
+  </div>
+
+  <!-- Tela de CRUD -->
+  <div class="container" style="display:none;">
+    <div class="header">
+      <span id="page-title">Cadastro de Mídias</span>
+      <div>
+        <button onclick="openModal()" id="new">Incluir</button>
+        <button onclick="toggleCadastro()" id="toggle-cadastro" style="display:none;">Alternar Cadastro</button>
+      </div>
+    </div>
+
+    <div class="divTable">
+      <table id="funcionarios-table" style="display:none;">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Cargo</th>
+            <th>Matricula</th>
+            <th>Empresa</th>
+            <th class="acao">Editar</th>
+            <th class="acao">Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <table id="midias-table">
+        <thead>
+          <tr>
+            <th>Tipo de Mídia</th>
+            <th>Número da Mídia</th>
+            <th>Número da Matrícula</th>
+            <th>Número de Série</th>
+            <th>Empresa</th>
+            <th>Status</th>
+            <th>Série</th>
+            <th class="acao">Editar</th>
+            <th class="acao">Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="modal-container">
+      <div class="modal">
+        <form id="funcionario-form" style="display:none;">
+          <label for="m-nome">Nome</label>
+          <input id="m-nome" type="text" required />
+
+          <label for="m-funcao">Cargo</label>
+          <input id="m-funcao" type="text" required />
+
+          <label for="m-matricula">Matricula</label>
+          <input id="m-matricula" type="number" required />
+
+          <label for="m-empresa">Empresa</label>
+          <input id="m-empresa" type="text" required />
+          <button id="btnSalvar">Salvar</button>
+        </form>
+        <form id="midia-form">
+          <label for="m-tipomidia">Tipo de Mídia</label>
+          <input id="m-tipomidia" type="text" required />
+
+          <label for="m-nummidia">Número da Mídia</label>
+          <input id="m-nummidia" type="text" required />
+
+          <label for="m-nummatricula">Número da Matrícula</label>
+          <input id="m-nummatricula" type="text" required />
+
+          <label for="m-numserie">Número de Série</label>
+          <input id="m-numserie" type="text" required />
+
+          <label for="m-empresa-midia">Empresa</label>
+          <input id="m-empresa-midia" type="text" required />
+
+          <label for="m-status">Status</label>
+          <input id="m-status" type="text" required />
+
+          <label for="m-serie">Série</label>
+          <input id="m-serie" type="text" required />
+
+          <button id="btnSalvarMidia">Salvar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
